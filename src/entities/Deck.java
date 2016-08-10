@@ -50,9 +50,8 @@ public class Deck extends Pack {
 	}
 
 	public Card fetch(Card card) {
-		Card fetchCard = new Card(card.face, card.suit);
 		cards.remove(card);
-		return fetchCard;
+		return card;
 	}
 
 	public boolean isEmpty() {
