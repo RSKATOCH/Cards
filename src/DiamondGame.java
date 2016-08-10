@@ -33,7 +33,7 @@ class DiamondGame {
 		SimpleStrategy playerStrategy = new SimpleStrategy();
 
 		computer = new Player(computerHand, computerStrategy, "computer");
-		player = new Player(computerHand, playerStrategy, "player");
+		player = new Player(playerHand, playerStrategy, "player");
 
 		// Discard one suit
 		gamedeck.drawSuit(DISCARD_SUIT);
