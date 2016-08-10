@@ -29,6 +29,16 @@ public class Deck extends Pack {
 
 	}
 
+	public List<Card> drawSuit(String suit) {
+		List<Card> tempCards = new ArrayList<>();
+		for (int i = 0; i < this.cards.size(); i++) {
+			if (cards.get(i).suit.equals(suit)) {
+				tempCards.add(fetch(cards.get(i--)));
+			}
+		}
+		return tempCards;
+	}
+
 	public void shuffle() {
 		int times = (int) (Math.random() * 10) + 1;
 		while (times-- > 0)
@@ -37,6 +47,12 @@ public class Deck extends Pack {
 
 	public void remove(Card card) {
 		cards.remove(card);
+	}
+
+	public Card fetch(Card card) {
+		Card fetchCard = new Card(card.face, card.suit);
+		cards.remove(card);
+		return fetchCard;
 	}
 
 	public boolean isEmpty() {

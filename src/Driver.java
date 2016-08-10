@@ -8,7 +8,10 @@ import pack.PackWithoutJoker;
 public class Driver {
 	public static void main(String[] args) {
 		try {
-			debugPokerHand();
+		//	debugPokerHand();
+			Deck deck = new Deck(1, PackWithoutJoker.class);
+			PokerHand hand = new PokerHand(deck.drawSuit("SPADE"));
+			System.out.println(hand);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
