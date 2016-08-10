@@ -31,6 +31,10 @@ public class Card implements Comparable {
 	public String toString() {
 		return "[" + face + " " + suit + " " + "]";
 	}
+	
+	public Integer getFaceValue() {
+		return FACES.indexOf(face)+2;
+	}
 
 	public int hashCode() {
 		int card = (SUITS.indexOf(suit) * FACES.size()) + FACES.indexOf(face);
