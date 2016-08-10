@@ -40,24 +40,31 @@ class DiamondGame {
 	}
 
 	private String playGame() {
+
+		while (!gamedeck.isEmpty()) {
+			conductBidding();
+		}
+		return getWinner(computer, player);
+	}
+
+	private void conductBidding() {
 		int computerBid, playerBid;
 		Card bidOn;
 		int score;
 		int winningBid;
-		while (!gamedeck.isEmpty()) {
-			bidOn = gamedeck.draw();
 
-			computerBid = computer.getBid(bidOn).getFaceValue();
-			playerBid = player.getBid(bidOn).getFaceValue();
+		bidOn = gamedeck.draw();
 
-			score = bidOn.getFaceValue();
+		computerBid = computer.getBid(bidOn).getFaceValue();
+		playerBid = player.getBid(bidOn).getFaceValue();
 
-			updateScores(computerBid, playerBid, score);
+		score = bidOn.getFaceValue();
 
-			computer.updateBids(playerBid);
-			player.updateBids(playerBid);
-		}
-		return getWinner(computer, player);
+		updateScores(computerBid, playerBid, score);
+
+		computer.updateBids(playerBid);
+		player.updateBids(playerBid);
+
 	}
 
 	private void updateScores(Integer computerBid, Integer playerBid, Integer score) {
