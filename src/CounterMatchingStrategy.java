@@ -5,7 +5,7 @@ public class CounterMatchingStrategy extends Strategy {
 
 	@Override
 	public String getNextMove(Hand hand, Card bidOn) {
-		return strategy.charAt((Integer.valueOf(bidOn.face) - 1) % strategy.length()) + "";
+		return strategy.charAt((strategy.indexOf(bidOn.face)+1)%strategy.length())+"";
 	}
 
 	@Override

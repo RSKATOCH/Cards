@@ -10,9 +10,9 @@ public class Card implements Comparable {
 	public static List<String> SUITS;
 	static {
 		FACES = new ArrayList<>();
-		for (int i = 2; i <= 10; i++)
+		for (int i = 2; i < 10; i++)
 			FACES.add(Integer.toString(i));
-		FACES.addAll(Arrays.asList("JQKA".split("")));
+		FACES.addAll(Arrays.asList("TJQKA".split("")));
 		String[] suits = { "SPADE", "HEART", "CLUB", "DIAMOND" };
 		SUITS = Arrays.asList(suits);
 	}

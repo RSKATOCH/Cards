@@ -29,8 +29,8 @@ class DiamondGame {
 		DiamondHand computerHand = new DiamondHand(gamedeck.drawSuit(COMPUTER_SUIT));
 		DiamondHand playerHand = new DiamondHand(gamedeck.drawSuit(PLAYER_SUIT));
 
-		DiamondStrategy computerStrategy = new DiamondStrategy();
-		SimpleStrategy playerStrategy = new SimpleStrategy();
+		Strategy computerStrategy = new DiamondStrategy();
+		Strategy playerStrategy = new CounterMatchingStrategy();
 
 		computer = new Player(computerHand, computerStrategy, "computer");
 		player = new Player(playerHand, playerStrategy, "player");
@@ -68,7 +68,7 @@ class DiamondGame {
 		player.updateBids(playerBid);
 
 		System.out.println("Bids were: "+computerBid+" "+playerBid);
-
+		
 	}
 
 	private void updateScores(Integer computerBid, Integer playerBid, Integer score) {
