@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import entities.Card;
+
 public class SimpleStrategy extends Strategy
 {
 
@@ -10,11 +12,20 @@ public class SimpleStrategy extends Strategy
 	}
 	
 	@Override
-	public int getNextMove() {
+	public String getNextMove(Hand hand) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		int output=sc.nextInt();
-		sc.close();
+		String output = sc.next();
+		Card card = new Card(output,hand.cards.get(0).suit);
+		while(!hand.cards.contains(card)) {
+			
+			output = sc.next();
+			card = new Card(output,hand.cards.get(0).suit);
+		}
+		hand.dropCard(card);
+		for(Card c : hand.cards) {
+			System.out.print(c.getFaceValue()+" ");
+		}
 		return output;
 	}
 

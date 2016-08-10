@@ -54,7 +54,9 @@ class DiamondGame {
 		int winningBid;
 
 		bidOn = gamedeck.draw();
-
+		
+		System.out.println("Card: "+bidOn.face);
+		
 		computerBid = computer.getBid(bidOn).getFaceValue();
 		playerBid = player.getBid(bidOn).getFaceValue();
 
@@ -64,6 +66,8 @@ class DiamondGame {
 
 		computer.updateBids(playerBid);
 		player.updateBids(playerBid);
+
+		System.out.println("Bids were: "+computerBid+" "+playerBid);
 
 	}
 

@@ -13,7 +13,7 @@ public class Player {
 	}
 
 	public Card getBid(Card bidOn) {
-		Card card = new Card(String.valueOf(strategy.getNextMove() - 1), hand.cards.get(0).suit);
+		Card card = new Card(strategy.getNextMove(hand), hand.cards.get(0).suit);
 		return hand.dropCard(card);
 	}
 

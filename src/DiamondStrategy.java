@@ -1,23 +1,23 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import entities.Card;
+
 public class DiamondStrategy extends Strategy
 {
 	
-	List<Integer> Bids;
-	
 	public DiamondStrategy() {
-		Bids = new ArrayList<>();
+
 	}
 	
 	@Override
-	public int getNextMove() {
+	public String getNextMove(Hand hand) {
 		// TODO Auto-generated method stub
-		return 0;
+		return hand.dropCard(hand.cards.get(0)).face;
+		
 	}
 
 	public void updateBids(Integer bids) {
-		Bids.add(bids);
 		
 	}
 	
