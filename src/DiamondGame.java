@@ -55,8 +55,7 @@ class DiamondGame {
 			updateScores(computerBid, playerBid, score);
 
 			computer.updateBids(playerBid);
-			player.updateBids(computerBid);
-
+			player.updateBids(playerBid);
 		}
 		return getWinner(computer, player);
 	}
