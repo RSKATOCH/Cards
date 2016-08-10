@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import entities.Card;
@@ -12,7 +10,7 @@ public class SimpleStrategy extends Strategy
 	}
 	
 	@Override
-	public String getNextMove(Hand hand) {
+	public String getNextMove(Hand hand, Card bidOn) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		String output = sc.next();
