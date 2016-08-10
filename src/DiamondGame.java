@@ -1,3 +1,5 @@
+import java.util.List;
+
 import entities.Card;
 import entities.Deck;
 import pack.PackWithoutJoker;
@@ -59,7 +61,7 @@ class DiamondGame {
 		return getWinner(computer, player);
 	}
 
-	private int updateScores(Integer computerBid, Integer playerBid, Integer score) {
+	private void updateScores(Integer computerBid, Integer playerBid, Integer score) {
 
 		if (computerBid == playerBid) {
 			score = score / 2;
@@ -70,6 +72,7 @@ class DiamondGame {
 		} else {
 			player.updatePoints(score);
 		}
+
 	}
 
 	private String getWinner(Player computer, Player player) {
@@ -86,7 +89,7 @@ class DiamondGame {
 	 * Tester main
 	 */
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		DiamondGame game = new DiamondGame();
 		System.out.println("RESULT " + game.playGame());
 	}

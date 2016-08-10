@@ -12,8 +12,9 @@ public class Player {
 		this.strategy = strategy;
 	}
 
-	public Card getBid() {
-		return hand.dropCard(new Card(String.valueOf(strategy.getNextMove() - 1), hand.cards.get(0).suit));
+	public Card getBid(Card bidOn) {
+		Card card = new Card(String.valueOf(strategy.getNextMove() - 1), hand.cards.get(0).suit);
+		return hand.dropCard(card);
 	}
 
 	public Integer getPoints() {
