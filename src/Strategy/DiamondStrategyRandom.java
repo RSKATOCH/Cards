@@ -1,4 +1,6 @@
+package Strategy;
 import entities.Card;
+import entities.Hand;
 
 public class DiamondStrategyRandom extends Strategy {
 
@@ -9,10 +11,6 @@ public class DiamondStrategyRandom extends Strategy {
 		return hand.dropCard(hand.cards.get(RandomIndex)).face;
 	}
 
-	@Override
-	public void updateBids(Integer bid) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }

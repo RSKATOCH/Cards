@@ -1,7 +1,10 @@
+package app;
 import java.util.Collections;
 
+import comparators.CardComparatorByValue;
 import entities.Card;
 import entities.Deck;
+import entities.PokerHand;
 import pack.PackWithJoker;
 import pack.PackWithoutJoker;
 

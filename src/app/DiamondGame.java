@@ -1,7 +1,13 @@
+package app;
 import java.util.List;
 
+import Strategy.CounterMatchingStrategy;
+import Strategy.MatchingStrategy;
+import Strategy.Strategy;
 import entities.Card;
 import entities.Deck;
+import entities.DiamondHand;
+import entities.Player;
 import pack.PackWithoutJoker;
 
 class DiamondGame {
@@ -29,7 +35,7 @@ class DiamondGame {
 		DiamondHand computerHand = new DiamondHand(gamedeck.drawSuit(COMPUTER_SUIT));
 		DiamondHand playerHand = new DiamondHand(gamedeck.drawSuit(PLAYER_SUIT));
 
-		Strategy computerStrategy = new DiamondStrategy();
+		Strategy computerStrategy = new MatchingStrategy();
 		Strategy playerStrategy = new CounterMatchingStrategy();
 
 		computer = new Player(computerHand, computerStrategy, "computer");
@@ -54,9 +60,9 @@ class DiamondGame {
 		int winningBid;
 
 		bidOn = gamedeck.draw();
-		
-		System.out.println("Card: "+bidOn.face);
-		
+
+		System.out.println("Card: " + bidOn.face);
+
 		computerBid = computer.getBid(bidOn).getFaceValue();
 		playerBid = player.getBid(bidOn).getFaceValue();
 
@@ -64,11 +70,8 @@ class DiamondGame {
 
 		updateScores(computerBid, playerBid, score);
 
-		computer.updateBids(playerBid);
-		player.updateBids(playerBid);
+		System.out.println("Bids were: "+Card.FACES.get(computerBid-2)+" "+Card.FACES.get(playerBid-2));
 
-		System.out.println("Bids were: "+computerBid+" "+playerBid);
-		
 	}
 
 	private void updateScores(Integer computerBid, Integer playerBid, Integer score) {
@@ -91,7 +94,7 @@ class DiamondGame {
 		} else if (computer.getPoints() > player.getPoints()) {
 			return "COMPUTER";
 		} else {
-			return "YOU";
+			return "PLAYER";
 		}
 	}
 

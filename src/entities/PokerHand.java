@@ -1,9 +1,10 @@
+package entities;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-import entities.Card;
+import comparators.CardComparatorByValue;
 
 public class PokerHand extends Hand {
 	static {

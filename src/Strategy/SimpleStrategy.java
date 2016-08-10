@@ -1,6 +1,8 @@
+package Strategy;
 import java.util.Scanner;
 
 import entities.Card;
+import entities.Hand;
 
 public class SimpleStrategy extends Strategy
 {
@@ -24,10 +26,6 @@ public class SimpleStrategy extends Strategy
 		return output;
 	}
 
-	@Override
-	public void updateBids(Integer bid) {
-		// Do nothing
-		return;
-	}
+
 	
 }

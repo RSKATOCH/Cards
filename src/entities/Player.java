@@ -1,4 +1,5 @@
-import entities.Card;
+package entities;
+import Strategy.Strategy;
 
 public class Player {
 	Hand hand;
@@ -26,7 +27,5 @@ public class Player {
 		this.score += score;
 	}
 
-	public void updateBids(Integer bid) {
-		this.strategy.updateBids(bid);
-	}
+
 }

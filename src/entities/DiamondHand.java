@@ -1,6 +1,5 @@
+package entities;
 import java.util.List;
-
-import entities.Card;
 
 public class DiamondHand extends Hand
 {

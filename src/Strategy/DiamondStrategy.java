@@ -1,4 +1,6 @@
+package Strategy;
 import entities.Card;
+import entities.Hand;
 
 public class DiamondStrategy extends Strategy
 {

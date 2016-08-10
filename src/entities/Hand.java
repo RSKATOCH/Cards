@@ -1,10 +1,9 @@
+package entities;
 import java.util.ArrayList;
 import java.util.List;
 
-import entities.Card;
-
 public abstract class Hand {
-	List<Card> cards;
+	public List<Card> cards;
 
 	public Hand() {
 		cards = null;
